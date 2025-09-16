@@ -20,6 +20,18 @@ export default function Home() {
     setProduct("");
   }
 
+  function removeProduct(name: string) {
+    Alert.alert("Remover", `Deseja remover a tarefa ${name}?`, [
+      {
+        text: "Não",
+        style: "cancel"
+      },
+      {
+        text: "Sim",
+        onPress: () => setProducts(products.filter(item => item !== name))
+      }
+    ]);
+  }
 
   return (
     <View style={styles.container}>
