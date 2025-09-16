@@ -1,11 +1,17 @@
-import {useState } from "react";
-import {FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { styles } from "./styles";
+import { useState } from "react";
+import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { styles } from "../styles/styles";
+import { Product } from "../product/Product";
 
+export default function Home() {
+  const [products, setProducts] = useState<string[]>([]);
+  const [product, setProduct] = useState("");
 
-export default function Home(){
+  function removeProduct(name: string) {
 
-    return (
+  }
+
+  return (
     <View style={styles.container}>
       <Text style={styles.title}>Lista de Tarefas</Text>
       <Text style={styles.subtitle}>Adicione suas atividades a lista de tarefas</Text>
@@ -34,7 +40,7 @@ export default function Home(){
         )}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (
-          <Text style={styles.listEmptyText}>Realizou todas as Tarefas? Adicione tarefas a sua lista de pendências</Text>
+          <Text style={styles.listEmptyText}>Nenhuma tarefa cadastrada.</Text>
         )}
       />
     </View>
