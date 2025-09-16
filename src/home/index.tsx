@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { styles } from "../styles/styles";
-import { Product } from "../product/Product";
+import { Product } from "../components/product";
+import {styles} from './styles'
 
 export default function Home() {
   const [products, setProducts] = useState<string[]>([]);
   const [product, setProduct] = useState("");
 
-  function removeProduct(name: string) {
+  function addProduct() {
+    if (!product.trim()) {
+      return Alert.alert("Ops!", "Digite uma tarefa antes de adicionar.");
+    }
 
+    if (products.includes(product)) {
+      return Alert.alert("Tarefa já existe", "Essa tarefa já está na lista.");
+    }
+
+    setProducts([...products, product]);
+    setProduct("");
   }
+
 
   return (
     <View style={styles.container}>

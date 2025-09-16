@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { styles } from "../home/styles";
+import { styles } from "./styles"
 
 type Props = {
   name: string;
@@ -11,7 +11,8 @@ export function Product({ name, onRemove }: Props) {
     <View style={styles.container}>
       <Text style={styles.name}>{name}</Text>
 
-      <TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={onRemove}>
+        <Text style={styles.buttonText}>🗑</Text>
       </TouchableOpacity>
     </View>
   );
