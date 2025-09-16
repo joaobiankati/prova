@@ -50,4 +50,20 @@ export const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 24,
   },
+  listEmptyText: {
+    fontSize: 16,
+    fontWeight: "normal",
+    textAlign: "center",
+    color: "#fff",
+    marginTop: 20
+  },
+  list: {
+    flexGrow: 1,
+  },
+  listTitle: {
+    fontSize: 20,
+    fontWeight: "700",
+    lineHeight: 24,
+    color: "#F2F2F2",
+  }
 });
